@@ -82,7 +82,7 @@ def login():
             print(message)
             return False
         
-        print("Password changed successfully. Please remember to set up 2FA.")
+        print("Password changed successfully. Please remember to set up 2FA with SOC.")
         return True
     except ValueError as e:
         print(e)
