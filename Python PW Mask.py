@@ -1,12 +1,13 @@
 import random
 import string
 import time
-import getpass  # Used to handle hidden password input
+import getpass  # Used to handle hidden password input, enhances security by masking input directly in the terminal.
 
 def mask_email(email):
     """
     Enhance the security of the masked email by including symbols and numbers,
     showing only the first letter before the '@', and preserving the domain.
+    This function can be integrated with user authentication systems to mask emails during login or account recovery processes.
     """
     if '@' not in email:
         raise ValueError("Invalid email address.")
@@ -20,6 +21,7 @@ def mask_email(email):
 def generate_temp_password(length):
     """
     Generate a random password of specified length, containing letters, digits, and symbols.
+    This can be linked to password strength monitoring systems to ensure complexity requirements are met.
     """
     if length < 14 or length > 25:
         raise ValueError("Password length must be between 14 and 25 characters.")
@@ -29,6 +31,7 @@ def generate_temp_password(length):
 def validate_password(password):
     """
     Validate the new password based on defined security policies.
+    This function can be integrated into a larger security framework that includes continuous compliance monitoring.
     """
     if len(password) < 8:
         return False, "Password must be at least 8 characters long."
@@ -41,6 +44,7 @@ def validate_password(password):
 def ask_password_masking():
     """
     Ask user if they want to mask their new password.
+    This interactive approach enhances user control over security practices and can be adapted for different security levels.
     """
     response = input("Do you want to mask your password while typing? (Y/N): ").strip().upper()
     if response == 'Y':
@@ -56,6 +60,8 @@ def ask_password_masking():
 def login():
     """
     Prompt for email input, generate a temporary password, and enforce password change on login.
+    Integrates email masking, temporary password generation, and user-driven password masking options for enhanced security.
+    Consider integration with log management systems to monitor login attempts and password change activities.
     """
     email = input("Please enter your email address: ")
     try:
@@ -90,3 +96,4 @@ def login():
 
 # Trigger the login function
 login()
+
