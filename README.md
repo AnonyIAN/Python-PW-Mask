@@ -1,6 +1,6 @@
 # Python PW Mask
 
-Python PW Mask is a Python-based tool designed to enhance security by masking passwords during user input. It provides additional functionality to enforce strong password protocols, generate one-time temporary passwords, and ensure that all passwords are entered securely, whether in masked or visible form, based on user preference.
+Python PW Mask is a tool designed to enhance security by masking passwords during user input. It provides additional functionality to enforce strong password protocols, generate one-time temporary passwords, and ensure that all passwords are entered securely, whether in masked or visible form, based on user preference.
 
 ## Features
 
