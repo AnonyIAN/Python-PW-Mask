@@ -4,13 +4,14 @@ Python PW Mask is a tool designed to enhance security by masking passwords durin
 
 ## Features
 
-- **Masking Password Input**: This feature masks the password during entry to protect sensitive information. It uses a mix of symbols and numbers to increase security.
-- **Temporary Password Generation**: This function generates a temporary password that expires after one session or a set time limit, promoting secure access management.
-- **Enhanced Security Measures**: Enforces password changes and provides options for increased password complexity. It also includes potential integrations with log management and compliance monitoring systems.
-- User-Controlled Masking Options: This powerful feature allows users to choose whether their password is masked during input, with added warnings and security measures for unmasked entries. This level of control empowers security professionals, giving them the reassurance that their security measures are in their hands.
+- **Masking Password Input:** Protects sensitive information by masking passwords during entry using a mix of symbols and numbers.
+- **Temporary Password Generation:** Generates a temporary password that expires after one session or a set time limit, promoting secure access management.
+- **Enhanced Security Measures:** Enforces password changes, offers increased password complexity options, and potential integrations with log management and compliance monitoring systems.
+- **User-Controlled Masking Options:** Allows users to choose whether their password is masked during input, with added warnings and security measures for unmasked entries. This feature gives security professionals control and reassurance over their security measures.
 
 ## Installation
 
-Clone this repository to your local machine using:
-```bash
-git clone https://github.com/yourusername/python-pw-mask.git
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/python-pw-mask.git
+
