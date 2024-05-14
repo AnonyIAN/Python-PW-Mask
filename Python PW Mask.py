@@ -7,7 +7,17 @@ def mask_email(email):
     """
     Enhance the security of the masked email by including symbols and numbers,
     showing only the first letter before the '@', and preserving the domain.
+    
     This function can be integrated with user authentication systems to mask emails during login or account recovery processes.
+
+    Args:
+    email (str): The email address to be masked.
+
+    Returns:
+    str: The masked email address.
+
+    Raises:
+    ValueError: If the email address is invalid.
     """
     if '@' not in email:
         raise ValueError("Invalid email address.")
@@ -21,17 +31,34 @@ def mask_email(email):
 def generate_temp_password(length):
     """
     Generate a random password of specified length, containing letters, digits, and symbols.
+
     This can be linked to password strength monitoring systems to ensure complexity requirements are met.
+
+    Args:
+    length (int): Length of the generated password. Must be between 14 and 25 characters.
+
+    Returns:
+    str: The generated temporary password.
+
+    Raises:
+    ValueError: If the length is not between 14 and 25 characters.
     """
     if length < 14 or length > 25:
         raise ValueError("Password length must be between 14 and 25 characters.")
     characters = string.ascii_letters + string.digits + string.punctuation
-    return ''.join(random.choice(characters) for i in range(length))
+    return ''.join(random.choice(characters) for _ in range(length))
 
 def validate_password(password):
     """
     Validate the new password based on defined security policies.
+
     This function can be integrated into a larger security framework that includes continuous compliance monitoring.
+
+    Args:
+    password (str): The password to validate.
+
+    Returns:
+    tuple: A tuple containing a boolean indicating validity and a message.
     """
     if len(password) < 8:
         return False, "Password must be at least 8 characters long."
@@ -44,23 +71,30 @@ def validate_password(password):
 def ask_password_masking():
     """
     Ask user if they want to mask their new password.
+
     This interactive approach enhances user control over security practices and can be adapted for different security levels.
+
+    Returns:
+    bool: True if the user wants to mask their password, False otherwise.
     """
-    response = input("Do you want to mask your password while typing? (Y/N): ").strip().upper()
-    if response == 'Y':
-        return True
-    elif response == 'N':
-        print("WARNING: Your password will be visible when you type it. Please ensure no one is around to see it.")
-        confirm = input("Are you sure you want to proceed with visible password entry? (Y/N): ").strip().upper()
-        return False if confirm == 'Y' else True  # If they are not sure, fallback to masking
-    else:
-        print("Invalid option, defaulting to masked input.")
-        return True
+    while True:
+        response = input("Do you want to mask your password while typing? (Y/N): ").strip().upper()
+        if response == 'Y':
+            return True
+        elif response == 'N':
+            print("WARNING: Your password will be visible when you type it. Please ensure no one is around to see it.")
+            confirm = input("Are you sure you want to proceed with visible password entry? (Y/N): ").strip().upper()
+            if confirm == 'Y':
+                return False
+        else:
+            print("Invalid option, please enter 'Y' or 'N'.")
 
 def login():
     """
     Prompt for email input, generate a temporary password, and enforce password change on login.
+
     Integrates email masking, temporary password generation, and user-driven password masking options for enhanced security.
+
     Consider integration with log management systems to monitor login attempts and password change activities.
     """
     email = input("Please enter your email address: ")
@@ -95,5 +129,7 @@ def login():
         return False
 
 # Trigger the login function
-login()
+if __name__ == "__main__":
+    login()
+
 
